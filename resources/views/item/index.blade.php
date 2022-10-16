@@ -25,8 +25,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>名前</th>
-                                <th>種別</th>
+                                <th>商品名</th>
+                                <th>性別</th>
+                                <th>個数</th>
                                 <th>詳細</th>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->detail2 }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
                                 </tr>

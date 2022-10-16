@@ -24,12 +24,12 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
+                            <label for="name">商品名</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="名前">
-                        </div>
+                        </div>                        
 
                         <div class="form-group">
-                            <label for="type">種別</label>
+                            <label for="type">個数</label>
                             <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
                         </div>
 
