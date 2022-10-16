@@ -29,6 +29,14 @@
                         </div>                        
 
                         <div class="form-group">
+                            <label>性別</label><br>
+                            <input type="radio" id="men" name="detail2" value="メンズ">
+                            <label for="men">メンズ</label>
+                            <input type="radio" id="ladies" name="detail2" value="レディース">
+                            <label for="ladies">レディース</label>
+                        </div>
+
+                        <div class="form-group">
                             <label for="type">個数</label>
                             <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
                         </div>

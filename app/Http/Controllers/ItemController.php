@@ -58,4 +58,49 @@ class ItemController extends Controller
 
         return view('item.add');
     }
+
+
+
+
+        //商品編集画面を表示 
+        public function edit(Request $request){
+            $item = Item::where('id', '=', $request->id)->first();
+            return view ('item.edit')->with([
+                'item' => $item ,
+            ]);
+        }
+    
+        //編集を実行する
+        public function itemEdit(Request $data){
+            $data->validate([
+                'name' => 'required',
+                'type' => 'required',
+                'datail' => 'required',
+            ],
+            [
+                'name.required' => '商品名は必須です。',
+                'type.required'  => '種別は必須項目です。',
+                'datail.required'  => '詳細情報は必須項目です。',
+            ]);
+    
+            $item = Item::where('id', '=', $data->id)->first();
+    
+            $item->name = $data->input('name');
+            $item->type = $data->input('type');
+            $item->datail = $data->input('datail');
+    
+            $item->save();
+    
+            return redirect('/item');
+        }
+    
+    
+        //削除を実行する 
+        public function itemDelete(Request $request){
+            $item = Item::where('id', '=', $request->id)->first();
+            $item->delete();
+    
+            return redirect('/item');
+        }
+
 }
