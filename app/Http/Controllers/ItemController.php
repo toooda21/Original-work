@@ -42,6 +42,9 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'detail2' => 'required',
+                'type' => 'required',
+                'detail' => 'required',
             ]);
 
             // 商品登録
@@ -61,7 +64,6 @@ class ItemController extends Controller
 
 
 
-
         //商品編集画面を表示 
         public function edit(Request $request){
             $item = Item::where('id', '=', $request->id)->first();
@@ -71,27 +73,25 @@ class ItemController extends Controller
         }
     
         //編集を実行する
-        public function itemEdit(Request $data){
-            $data->validate([
-                'name' => 'required',
+        public function itemEdit(Request $request){
+            // バリデーション
+            $this->validate($request, [
+                'name' => 'required|max:100',
+                'detail2' => 'required',
                 'type' => 'required',
-                'datail' => 'required',
-            ],
-            [
-                'name.required' => '商品名は必須です。',
-                'type.required'  => '種別は必須項目です。',
-                'datail.required'  => '詳細情報は必須項目です。',
+                'detail' => 'required',
             ]);
-    
-            $item = Item::where('id', '=', $data->id)->first();
-    
-            $item->name = $data->input('name');
-            $item->type = $data->input('type');
-            $item->datail = $data->input('datail');
+
+            $item = Item::where('id', '=', $request->id)->first();
+
+            $item->name = $request->input('name');
+            $item->detail2 = $request->input('detail2');
+            $item->type = $request->input('type');
+            $item->detail = $request->input('detail');
     
             $item->save();
     
-            return redirect('/item');
+            return redirect('/items');
         }
     
     
@@ -100,7 +100,7 @@ class ItemController extends Controller
             $item = Item::where('id', '=', $request->id)->first();
             $item->delete();
     
-            return redirect('/item');
+            return redirect('/items');
         }
 
 }
