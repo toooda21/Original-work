@@ -45,6 +45,13 @@ class ItemController extends Controller
                 'detail2' => 'required',
                 'type' => 'required',
                 'detail' => 'required',
+            ],
+            [
+                'name.required' => '商品名は必須です。',
+                'detail2.required'  => '性別の選択は必須項目です。',
+                'type.required'  => '種別は必須項目です。',
+                'detail.required'  => '詳細情報は必須項目です。',
+
             ]);
 
             // 商品登録
@@ -80,14 +87,20 @@ class ItemController extends Controller
                 'detail2' => 'required',
                 'type' => 'required',
                 'detail' => 'required',
+            ],
+            [
+                'name.required' => '商品名は必須です。',
+                'detail2.required'  => '性別の選択は必須項目です。',
+                'type.required'  => '種別は必須項目です。',
+                'detail.required'  => '詳細情報は必須項目です。',
             ]);
 
             $item = Item::where('id', '=', $request->id)->first();
 
-            $item->name = $request->input('name');
-            $item->detail2 = $request->input('detail2');
-            $item->type = $request->input('type');
-            $item->detail = $request->input('detail');
+            $item->name = $request->name;
+            $item->detail2 = $request->detail2;
+            $item->type = $request->type;
+            $item->detail = $request->detail;
     
             $item->save();
     

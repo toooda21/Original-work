@@ -1,16 +1,14 @@
-<!DOCTYPE html>
+@extends('adminlte::page')
+
+@section('title', '商品編集')
 
 
-<head>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>商品編集画面</title>
-</head>
 
-<body>
-    <div class=container>
+    @section('content_header')
+    <h1>商品一覧</h1>
+    @stop
 
-        <h1>商品編集</h1>
+    @section('content')
 
         <!-- 商品名 -->
         <form action="/items/edit" method="POST" name="edit">
@@ -65,12 +63,9 @@
 
             <!-- 削除ボタン -->
         <form action="/items/delete/{{$item->id}}" method="POST">
-            @csrf
             <div class="form-group">
                 <button type="submit" class="btn btn-danger btn-sm">削除</button>
             </div>        
         </form>
-    </div>
+@stop
 
-</body>
-</html>
