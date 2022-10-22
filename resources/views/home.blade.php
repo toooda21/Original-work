@@ -1,13 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'ホーム')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>ようこそ！！</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>ログインできました。</p>
+    <p>サイドメニューから商品の一覧・登録を行ってください。</p>
 @stop
 
 @section('css')

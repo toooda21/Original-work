@@ -5,7 +5,7 @@
 
 
     @section('content_header')
-    <h1>商品一覧</h1>
+    <h1>商品編集</h1>
     @stop
 
     @section('content')
