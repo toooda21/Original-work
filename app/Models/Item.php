@@ -2,10 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
+    // use HasFactory;
+    // const TYPE=[
+    //     1 => "メンズ",
+    //     2 => "レディース"
+    // ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -14,6 +21,7 @@ class Item extends Model
     protected $fillable = [
         'user_id',
         'name',
+        'detail2',
         'type',
         'detail',
     ];
