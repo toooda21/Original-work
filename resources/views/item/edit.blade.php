@@ -63,6 +63,7 @@
 
             <!-- 削除ボタン -->
         <form action="/items/delete/{{$item->id}}" method="POST">
+            @csrf
             <div class="form-group">
                 <button type="submit" class="btn btn-danger btn-sm">削除</button>
             </div>        
